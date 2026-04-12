@@ -22,6 +22,27 @@
         And more specifically, do popular songs share similar audio characteristics, 
         and do those characteristic vary by genre? </p>
 
+    <p>
+        This project explores the relationship between a song’s measurable features and
+         its popularity within its genre using Spotify’s track dataset. Songs can be described 
+         not only by their title, artist, or genre, but also by quantitative attributes such as 
+         danceability, energy, loudness, tempo, duration, valence, and acousticness. These features
+        provide a way to analyze music beyond personal opinion and taste. By comparing these 
+        characteristics across genres, we aim to identify whether highly popular songs tend to follow
+        certain patterns and whether those patterns differ between genres.
+    </p>
+
+
+    <p>
+        The goal of this analysis is not simply to determine which songs are popular, but to better 
+        understand why they become popular. For example, one genre may favor high-energy and danceable
+        tracks, while another may show stronger popularity among songs with lower tempo or more acoustic
+        qualities. Studying these relationships can reveal how musical structure connects with listener 
+        preferences and how genres develop their own successful formulas over time.
+    </p>
+
+
+
     <p>We believe that this topic is especially valuable because it connects data science with modern 
         digital media and cultural trends. Music popularity is often discussed in 
         subjective terms, but datasets like Spotify’s allow us to examine popularity 
@@ -97,15 +118,19 @@
             The website provides the geographical information for making maps for US states. 
         </p>
 
-        <p>To make a better data visualization, we remove the Alaska and Hawaii
-            from the data. Following is an interactive map for the 
-            lower 48 states in US. User can zoom in the map. The color
-            indicates the unemployment rate for each state. When click any 
-            state, other social factors will be revealed for the state. </p>
+        <h3>Valence by Genre</h3>
 
-            <div class = 'center'>
-                <iframe src="map.html" width="80%" height="400px" frameborder="0"></iframe>
-            </div>
+        <p>
+            This box plot shows how valence, or the musical positivity of a song,
+            differs across Spotify genres. Valence measures how happy, cheerful,
+            or positive a track sounds. By comparing the distributions for each
+            genre, we can see which genres tend to have more upbeat songs and
+            which tend to have lower or more varied valence values.
+        </p>
+
+        <div class="center">
+            <iframe src="valence_by_genre.html" width="90%" height="700px" frameborder="0"></iframe>
+        </div>
             
             <p>In general, west coast states tend to have higher 
                 unemployment rate. On the east coast, West virginia 
