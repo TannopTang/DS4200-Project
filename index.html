@@ -35,7 +35,7 @@
 
     <h3>Introduction to the data</h3>
 
-    <p> Our analysis makes use of a dataset called <code>Spotify_Song_Attributes_Cleaned.csv</code>, which contains
+    <p> Our analysis makes use of a dataset called Spotify_Song_Attributes_Cleaned.csv, which contains
 audio features and metadata for songs collected from Spotify. The dataset includes information about track
 characteristics such as danceability, energy, valence, speechiness, acousticness, instrumentalness,
 tempo, loudness, popularity, and genre labels. These variables allow us to examine how songs differ across
@@ -170,30 +170,30 @@ in the following table:</p>
             </div>            
         </div>
         
-        <h3> The relationship between unemployment rate and other social factors</h3>
+        <h3> The relationship between Spotify audio features </h3>
 
         <div class = 'container'>
             <div class = 'text'>
-                <p>Moreover, we also want to examine the relationship between
-                    unemployment rate and other social factors in the data. All 
-                    features are numerical thus we firts create a correlation
-                    plot to examine whether there are linear relationship between 
-                    unemployment rate with other social factors. Notice that if 
-                    the correlation is small, it only means that there is no potential
-                    linear relationship between two features. 
+                <p>Moreover, we also want to examine the relationship between different
+                    Spotify audio features in the dataset. Since all selected features are
+                    numerical, we create a correlation heatmap to explore whether there are
+                    linear relationships between variables such as danceability, energy,
+                    valence, loudness, and others. A higher absolute correlation value
+                    indicates a stronger linear relationship, while values close to zero
+                    suggest little to no linear association between two features.
                 </p>
                 <p>
-                    Based on the correlation plot, among all the features, poverty 
-                    has the strongest correlation with the unemployment rate since
-                    they are both related to the economics. The percentage of single 
-                    parents is the second important feature which inidicates the 
-                    stability of family is also strongly related to the job market. 
-                    The increase of unemployment rate may also related to the increase 
-                    of violent crime and murder rate but has a negative relationship
-                    with education indicators, like the percentage of people who go to
-                    high school and college. The only variable that has no direct linear
-                    relation with the unemployment rate is Metropolitan, which means the 
-                    percent of residents living in a metropolitan area. 
+                    Based on the heatmap, some audio features show strong relationships.
+                    For example, energy has a strong positive correlation with loudness,
+                    indicating that more energetic songs tend to be louder. In contrast,
+                    acousticness has a strong negative correlation with energy, suggesting
+                    that acoustic tracks are generally less intense. Danceability and
+                    valence also show moderate positive relationships, meaning more
+                    danceable songs often sound more positive or upbeat. Meanwhile,
+                    features like tempo and speechiness tend to have weaker correlations
+                    with others, indicating they capture more independent aspects of a
+                    song. Overall, the heatmap helps reveal how different musical
+                    characteristics interact within Spotify songs.
                 </p>
             </div>
             <div class = 'image'>
