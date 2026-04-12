@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>D3 Grouped Bar Chart - Average Audio Features by Genre</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: white;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    p.subtitle {
+      text-align: center;
+      margin-top: 0;
+      color: grey;
+    }
+
+    #chart {
+      margin-top: 20px;
+      overflow-x: auto;
+      overflow-y: visible;
+      white-space: nowrap;
+      position: relative;
+    }
+
+    .axis-label {
+      font-size: 14px;
+      fill: black;
+    }
+
+    .chart-title {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .legend text {
+      font-size: 13px;
+      alignment-baseline: middle;
+    }
+
+    .tooltip {
+      position: absolute;
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 8px 10px;
+      border-radius: 6px;
+      font-size: 13px;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.15s ease;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+  <h1>Average Audio Features by Genre</h1>
+  <p class="subtitle">
+    Grouped bar chart of normalized Spotify audio features by major genre
+  </p>
+
+  <div id="chart"></div>
+  <div class="tooltip" id="tooltip"></div>
+
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="d3_bar_graph.js"></script>
+</body>
+</html>
