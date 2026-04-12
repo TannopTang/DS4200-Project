@@ -2,10 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>DS4200 Project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My website</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Hello World!</h1>
-    <p>Coming soon...</p>
+    <h1 style="font-size: 24px; color: blue;">Hello World!</h1>
+
+    <h3>A subtitle</h3>
+
+    <button id = 'navigateButton'>Go to another page</button>
+    <script>
+        const navigateButton = document.getElementById('navigateButton')
+        navigateButton.addEventListener('click', function(){
+            window.location.href = 'https://www.google.com'
+        })
+    </script>
+
+
+    <p id = 'main'>My name is Xiaoyi Yang.</p>
+
+    <p>Today is a <b>good</b> day!</p>
+
+    <p>I will get an A in <i> DS4200</i>.</p>
+
+    <p class = 'link'><a href="https://www.northeastern.edu">Check my University website</a></p>
+
+    <p class = 'link'><a href="test.html">This is a test page.</a></p>
+
+    <ul>
+        <li>Talk to my TAs</li>
+        <li>Read some paper</li>
+        <li>Regrade the quiz</li>
+    </ul>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Cat_August_2010-4.jpg/1280px-Cat_August_2010-4.jpg" 
+    alt="my picture" width = 500>
 </body>
 </html>
