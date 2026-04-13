@@ -149,51 +149,45 @@ in the following table:</p>
         <h3>Valence by Genre</h3>
 
         <p>
-            This box plot shows how valence, or the musical positivity of a song,
-            differs across Spotify genres. Valence measures how happy, cheerful,
-            or positive a track sounds. By comparing the distributions for each
-            genre, we can see which genres tend to have more upbeat songs and
-            which tend to have lower or more varied valence values.
+            First we want to get the general feel of the music, and to do that we used valence to 
+            show how musical positivity differs across generes. Using a box plot in this case is 
+            effective because it clearly compares each genre’s median, spread, and outliers in 
+            one view, and I designed it this way because a box plot reveals much more than an average, 
+            while sorting genres by median valence makes the pattern easier to read and interpret. The 
+            interactive features within this figure allows users to hover for details, 
+            zoom in on specific genres, pan across the figure, and inspect outliers more closely, which
+            allows users focus on certain genres and gain push for a deeper comparision. From this graph 
+            we can see that positivity is not distributed evenly across genres, as some tend to have higher 
+            valence, some lower, and some that have a greater distribution of mood than others, showing that 
+            the genre influences musical mood in different ways.
         </p>
 
         <div class="center">
-            <iframe src="valence_by_genre.html" width="90%" height="700px" frameborder="0"></iframe>
+            <iframe src="valence_by_genre.html" width="100%" height="700px" frameborder="0"></iframe>
         </div>
             
-            <p>In general, west coast states tend to have higher 
-                unemployment rate. On the east coast, West virginia 
-                and New York state tend to have higher unemplyment rate
-                than the others. In the south, Mississippi and Louisiana
-                are the ones with the much higher unemplyment rate.
-            </p>
-
-        <h3>Overview of the Unemployment rate</h3>
         
-        <div class = 'container'>
-            <div class = 'image'>
-                <!-- <iframe src="histogram/index.html" width="100%" height="400px" frameborder="0"></iframe>-->
-                <iframe src="d3_bar_graph_index.html" width="90%" height="400px" frameborder="0"></iframe>
+
+            <p> 
+                We continue to explore the feel by adding more variables into the equation to help us see the 
+                overall vibe of a music within a certain genre and how they compare to others. Using a grouped bar 
+                chart we show the average values of danceability, energy, valence, and acoustcness across generes.
+                With the different combinations of these variables, we can tell how a song would sound or make people
+                feel. For example, having high dancibility, high energy, and high valence translate into like a party song, 
+                while songs with low energy, high acousticness, and mid/low valence translate into a song thats intimate, mellow,
+                and reflective. The interactive feature in this graph allows users to hover over the bars and see the exact
+                values for each feature, so that users can get an accurate comparison. From this visualization, we learned that 
+                geners differ across multiple audio traits, and that the feature that is linked to the popularity is likely dependent 
+                on genre rather than following a single formula for all songs.
+             </p>
+        
+        
+            <div class = "center">
+                <iframe src="d3_bar_graph_index.html" width="90%" height="700px" frameborder="0"></iframe>
             </div>
-            <div class = 'text'>
-                <p> First, we present an overview of the unemployment rate
-                    for all 50 states. Alaska is the one with the 
-                    highest unemployment rate, which may due to the seasonal 
-                    business in the state. The effectiveness of labor market 
-                    policies and governance structures can influence unemployment 
-                    rates. Washington, D.C., being the seat of government, may 
-                    experience fluctuations in employment related to government 
-                    spending and policies. Mississippi and Louisiana have economies 
-                    that are heavily reliant on sectors such as agriculture, 
-                    manufacturing, and energy. Economic downturns or fluctuations 
-                    in these industries can impact employment opportunities. 
-                    Connecticut, South Dakota and Virginia have the lowest 
-                    unemplyment rate. These states often have diverse economies 
-                    with strong sectors such as technology, healthcare, finance, 
-                    and tourism. A diverse economy can provide more resilience to 
-                    economic downturns.
-                </p>
-            </div>            
-        </div>
+            
+            
+           
         
         <h3> The relationship between Spotify audio features </h3>
     
