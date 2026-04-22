@@ -23,15 +23,14 @@
         and do those characteristic vary by genre? </p>
 
     <p>
-        This project explores the relationship between a song’s measurable features and
-         its popularity within its genre using Spotify’s track dataset. Songs can be described 
+        This project explores the relationship between a song's measurable features and
+         its popularity within its genre using Spotify's track dataset. Songs can be described 
          not only by their title, artist, or genre, but also by quantitative attributes such as 
          danceability, energy, loudness, tempo, duration, valence, and acousticness. These features
         provide a way to analyze music beyond personal opinion and taste. By comparing these 
         characteristics across genres, we aim to identify whether highly popular songs tend to follow
         certain patterns and whether those patterns differ between genres.
     </p>
-
 
     <p>
         The goal of this analysis is not simply to determine which songs are popular, but to better 
@@ -41,18 +40,14 @@
         preferences and how genres develop their own successful formulas over time.
     </p>
 
-
-
     <p>We believe that this topic is especially valuable because it connects data science with modern 
         digital media and cultural trends. Music popularity is often discussed in 
-        subjective terms, but datasets like Spotify’s allow us to examine popularity 
+        subjective terms, but datasets like Spotify's allow us to examine popularity 
         from a data-driven perspective. And the insights from this project can help explain 
         industry trends, audience behavior, and the characteristics that may contribute 
         to viral or commercially successful songs. More broadly, this research shows how 
         quantitative analysis can be used to better understand creative industries, turning 
         musical features into meaningful patterns that reflect what listeners respond to most.</p>
-
-    
 
     <h3>Introduction to the data</h3>
 
@@ -93,16 +88,8 @@ in the following table:</p>
                 <td class="tg-0lax">Spotify popularity score of the song</td>
               </tr>
               <tr>
-                <td class="tg-0lax">Single_Parent</td>
-                <td class="tg-0lax">Percent of children living in single parent families</td>
-              </tr>
-              <tr>
                 <td class="tg-0lax">Dancibility</td>
                 <td class="tg-0lax">Measure of how suitable a track is for dancing</td>
-              </tr>
-              <tr>
-                <td class="tg-0lax">Energy</td>
-                <td class="tg-0lax">Perceived intensity and activity of the track</td>
               </tr>
               <tr>
                 <td class="tg-0lax">Energy</td>
@@ -129,7 +116,7 @@ in the following table:</p>
                 <td class="tg-0lax">Estimated speed of the track in beats per minute</td>
               </tr>
               <tr>
-                <td class="tg-0lax">Loudnesss</td>
+                <td class="tg-0lax">Loudness</td>
                 <td class="tg-0lax">Overall loudness of the track in decibels</td>
               </tr>
             </tbody>
@@ -137,102 +124,102 @@ in the following table:</p>
         </div>
         <p>Meanwhile, we also believe that the underlying audio features provided
             by Spotify are essential for understanding patterns in modern music.
-            Therefore, we make use of Spotify’s song attribute dataset, which
+            Therefore, we make use of Spotify's song attribute dataset, which
             contains detailed numerical features such as danceability, energy,
             valence, tempo, and loudness. These attributes allow us to analyze
             songs quantitatively and uncover relationships between musical
             characteristics across different tracks and genres.
         </p>
 
-        <h3>Valence by Genre</h3>
+        <h3>The Relationship Between Spotify Audio Features</h3>
 
-        <p>
-            First we want to get the general feel of the music, and to do that we used valence to 
-            show how musical positivity differs across generes. Using a box plot in this case is 
-            effective because it clearly compares each genre’s median, spread, and outliers in 
-            one view, and we designed it this way because a box plot reveals much more than information 
-            for a specific variable, while sorting genres by median valence makes the pattern easier to read and interpret. The 
-            interactive features within this figure allows users to hover for details, 
-            zoom in on specific genres, pan across the figure, and inspect outliers more closely, which
-            allows users to go for a deeper comparision. From this graph 
-            we can see that positivity is not distributed evenly across genres, as some tend to have higher 
-            valence, some lower, and some that have a greater distribution of mood than others, showing that 
-            the genre influences musical mood in different ways.
-        </p>
-
-        <div class="center">
-            <iframe src="valence_by_genre.html" width="100%" height="700px" frameborder="0"></iframe>
-        </div>
-            
-        
-        <h3>Average audio feautres across genres</h3>
-            <p> 
-                We continue to explore the feel by adding more variables into the equation to help us see the 
-                overall vibe of a music within a certain genre and how they compare to others. Using a grouped bar 
-                chart we show the average values of danceability, energy, valence, and acoustcness across generes.
-                With the different combinations of these variables, we can tell how a song would sound or make people
-                feel. For example, having high dancibility, high energy, and high valence translate into like a party song, 
-                while songs with low energy, high acousticness, and mid/low valence translate into a song thats intimate, mellow,
-                and reflective. The interactive feature in this graph allows users to hover over the bars and see the exact
-                values for each feature, so that users can get an accurate comparison. From this visualization, we learned that 
-                geners differ across multiple audio traits, and that the feature that is linked to the popularity is likely dependent 
-                on genre rather than following a single formula for all songs.
-             </p>
-        
-        
-            <div class = "center">
-                <iframe src="d3_bar_graph_index.html" width="90%" height="700px" frameborder="0"></iframe>
-            </div>
-            
-            
-           
-        
-        <h3> The Relationship Between Spotify Audio Features </h3>
-    
-        <div class = 'container'>
-            <div class = 'text'>
-                <p>Moreover, we also want to examine the relationship between different
-                    Spotify audio features in the dataset. Since all selected features are
-                    numerical, we create a correlation heatmap to explore whether there are
-                    linear relationships between variables such as danceability, energy,
-                    valence, loudness, and others. A higher absolute correlation value
-                    indicates a stronger linear relationship, while values close to zero
-                    suggest little to no linear association between two features.
+        <div class='container'>
+            <div class='text'>
+                <p>Before diving into genre comparisons, we first examine the relationships
+                    between different Spotify audio features to understand which features are
+                    most strongly related and to guide the feature choices used in the rest of
+                    our analysis. Since all selected features are numerical, we create a 
+                    correlation heatmap to explore whether there are linear relationships 
+                    between variables such as danceability, energy, valence, loudness, and 
+                    others. A higher absolute correlation value indicates a stronger linear 
+                    relationship, while values close to zero suggest little to no linear 
+                    association between two features.
                 </p>
                 <p>
                     Based on the heatmap, some audio features show strong relationships.
                     For example, energy has a strong positive correlation with loudness,
                     indicating that more energetic songs tend to be louder. In contrast,
-                    acousticness has a strong negative correlation with energy, suggesting
-                    that acoustic tracks are generally less intense. Danceability and
-                    valence also show moderate positive relationships, meaning more
+                    acousticness has a strong negative correlation with energy (-0.77),
+                    suggesting that acoustic tracks are generally less intense. Danceability 
+                    and valence also show moderate positive relationships, meaning more
                     danceable songs often sound more positive or upbeat. Meanwhile,
                     features like tempo and speechiness tend to have weaker correlations
                     with others, indicating they capture more independent aspects of a
-                    song. Overall, the heatmap helps reveal how different musical
-                    characteristics interact within Spotify songs.
+                    song. These findings directly inform our subsequent visualizations,
+                    where we focus on features like valence, acousticness, and energy
+                    that show the most meaningful variation across genres.
                 </p>
             </div>
-            <div class = 'image'>
+            <div class='image'>
                 <div style="text-align:center; overflow: visible; padding: 20px 10px;">
                     <img src="HeatMap1.png" style="max-width: 100%; height: auto; display: inline-block;">
                 </div>
             </div>   
         </div>
 
-        <p>This scatter plot explores the relationship between acousticness and energy across different music 
-          genres on Spotify. Each point represents a song, and the dropdown menu allows you to isolate a single 
-          genre to see how it clusters in the acousticness-energy space. This pairing was chosen because 
-          acousticness and energy have the strongest negative correlation (-0.77) in the dataset, meaning songs 
-          that are more acoustic tend to be significantly less intense. Notably, Classical and Lo-Fi/Chill songs 
-          cluster in the high acousticness, low energy region, while EDM and Rock/Metal songs sit in the opposite 
-          corner with low acousticness and high energy. Pop and Hip-Hop/Rap songs are more spread across the middle, 
-          suggesting greater variety within those genres. Overall, the visualization confirms that acousticness and 
-          energy together are strong indicators of a song's sonic character and genre identity.
+        <h3>Valence by Genre</h3>
 
+        <p>
+            Building on the heatmap, we use valence to show how musical positivity differs 
+            across genres. Using a box plot in this case is effective because it clearly 
+            compares each genre's median, spread, and outliers in one view, while sorting 
+            genres by median valence makes the pattern easier to read and interpret. The 
+            interactive features within this figure allow users to hover for details, 
+            zoom in on specific genres, pan across the figure, and inspect outliers more 
+            closely. From this graph we can see that positivity is not distributed evenly 
+            across genres, as some tend to have higher valence, some lower, and some that 
+            have a greater distribution of mood than others, showing that genre influences 
+            musical mood in different ways.
         </p>
 
-        <div class = 'center'>
+        <div class="center">
+            <iframe src="valence_by_genre.html" width="100%" height="700px" frameborder="0"></iframe>
+        </div>
+
+        <h3>Average Audio Features Across Genres</h3>
+        <p> 
+            We continue to explore the feel by adding more variables into the equation to 
+            help us see the overall vibe of music within a certain genre and how they compare 
+            to others. Using a grouped bar chart we show the average values of danceability, 
+            energy, valence, and acousticness across genres. With the different combinations 
+            of these variables, we can tell how a song would sound or make people feel. For 
+            example, having high danceability, high energy, and high valence translates into 
+            a party song, while songs with low energy, high acousticness, and mid/low valence 
+            translate into a song that is intimate, mellow, and reflective. The interactive 
+            feature in this graph allows users to hover over the bars and see the exact values 
+            for each feature. From this visualization, we learned that genres differ across 
+            multiple audio traits, and that the feature linked to popularity is likely dependent 
+            on genre rather than following a single formula for all songs.
+        </p>
+
+        <div class="center">
+            <iframe src="d3_bar_graph_index.html" width="90%" height="700px" frameborder="0"></iframe>
+        </div>
+
+        <p>This scatter plot explores the relationship between acousticness and energy across 
+          different music genres on Spotify. Each point represents a song, and the dropdown menu 
+          allows you to isolate a single genre to see how it clusters in the acousticness-energy 
+          space. This pairing was chosen because acousticness and energy have the strongest negative 
+          correlation (-0.77) in the dataset, meaning songs that are more acoustic tend to be 
+          significantly less intense. Notably, Classical and Lo-Fi/Chill songs cluster in the high 
+          acousticness, low energy region, while EDM and Rock/Metal songs sit in the opposite corner 
+          with low acousticness and high energy. Pop and Hip-Hop/Rap songs are more spread across the 
+          middle, suggesting greater variety within those genres. Overall, the visualization confirms 
+          that acousticness and energy together are strong indicators of a song's sonic character and 
+          genre identity.
+        </p>
+
+        <div class='center'>
             <iframe src="scatter.html" width="85%" height="550px" frameborder="0"></iframe>
         </div>
 
@@ -240,21 +227,21 @@ in the following table:</p>
 
         <p>
             This set of histograms displays the distribution of song duration (in minutes) 
-    across each major genre on Spotify. Classical and Soundtrack/Score genres tend 
-    to have the widest spread in song length, with many tracks exceeding 5 minutes, 
-    reflecting the nature of orchestral and film compositions. In contrast, Pop, 
-    Hip-Hop/Rap, and EDM songs are tightly clustered between 2 and 4 minutes, 
-    aligning with the standard radio-friendly song format. Lo-Fi/Chill songs also 
-    show a narrow distribution, suggesting that the genre follows consistent length 
-    conventions. Overall, song duration appears to be a genre-defining characteristic, 
-    with certain genres showing much more variation than others.
+            across each major genre on Spotify. Classical and Soundtrack/Score genres tend 
+            to have the widest spread in song length, with many tracks exceeding 5 minutes, 
+            reflecting the nature of orchestral and film compositions. In contrast, Pop, 
+            Hip-Hop/Rap, and EDM songs are tightly clustered between 2 and 4 minutes, 
+            aligning with the standard radio-friendly song format. Lo-Fi/Chill songs also 
+            show a narrow distribution, suggesting that the genre follows consistent length 
+            conventions. Overall, song duration appears to be a genre-defining characteristic, 
+            with certain genres showing much more variation than others.
         </p>
 
-        <div class = 'center'>
+        <div class='center'>
             <img src="histogram.png" width="90%" />
         </div>
 
-        <h3>Summary and additional work</h3>
+        <h3>Summary and Additional Work</h3>
 
         <p>
             Through this analysis, we explored how audio features vary across genres on Spotify 
@@ -267,7 +254,7 @@ in the following table:</p>
             significantly across multiple audio traits simultaneously. Classical songs stand out with very 
             high acousticness and low danceability, while EDM and Pop cluster around high energy and 
             danceability. The scatter plot showed that while genre does influence where songs fall in 
-            the danceability-energy space, there is still considerable overlap between genres like Pop, 
+            the acousticness-energy space, there is still considerable overlap between genres like Pop, 
             Hip-Hop/Rap, and R&B/Soul, suggesting these genres share similar sonic qualities. Finally, 
             the duration histograms revealed that song length is also genre-dependent, with Classical and 
             Soundtrack/Score tracks spanning a much wider range while Pop and Lo-Fi/Chill songs follow a 
